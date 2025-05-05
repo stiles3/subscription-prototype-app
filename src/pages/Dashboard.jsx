@@ -32,7 +32,7 @@ export default function Dashboard() {
     e.preventDefault();
     try {
       setLoading(true);
-      await updateWebhookUrl({ webhookUrl });
+      await updateWebhookUrl({ webhookUrl, id: user.id });
       setUser((prev) => ({ ...prev, webhookUrl }));
       toast.success("Webhook URL updated successfully!");
     } catch (error) {
